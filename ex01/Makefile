@@ -2,7 +2,7 @@ NAME = zombie
 
 CXX = c++
 
-SRC = Zombie.cpp main.cpp newZombie.cpp
+SRC = Zombie.cpp main.cpp newZombie.cpp randomChamp.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
