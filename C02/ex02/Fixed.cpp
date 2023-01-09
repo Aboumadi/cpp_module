@@ -103,10 +103,12 @@ bool	Fixed::operator!=(const Fixed &val) const
 }
 
 Fixed Fixed::operator+(const Fixed &nbfixed) const {
+	//return Fixed(this->fixedvalue() + nbfixed.fixedvalue())
 	return Fixed(this->toFloat() + nbfixed.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed &nbfixed) const {
+	//return Fixed(this->fixedvalue() + nbfixed.fixedvalue())
 	return Fixed(this->toFloat() - nbfixed.toFloat());
 }
 
