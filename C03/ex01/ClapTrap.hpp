@@ -14,7 +14,7 @@ class ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string const &name);
 		ClapTrap(ClapTrap const &copy);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 		
 		/* Main Member Functions */
 		void	attack(std::string const &target);
