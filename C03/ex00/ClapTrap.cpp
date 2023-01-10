@@ -74,7 +74,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->Energy_points--;
 	}
 	if (this->Hp <= 0)
-		std::cout << "ClapTrap " << this->Name << " Can't repair because no Hit points " << std::endl;
+		std::cout << "ClapTrap " << this->Name << " Can't repair because no Hits points " << std::endl;
 	else if (!this->Energy_points)
 		std::cout << "ClapTrap " << this->Name << " is out because no Energy points" << std::endl;
 }
