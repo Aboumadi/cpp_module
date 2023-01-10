@@ -16,16 +16,18 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
+ScavTrap::ScavTrap(const ScavTrap &copy)
+{
     std::cout << "ScavTrap copy constructor called" << std::endl;
     Hp =  copy.Hp;
     Energy_points = copy.Energy_points;
     Damage = copy.Damage;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
     if (this != &other) {
-        std::cout << "ScavTrap operator constructor called" << std::endl;
+        std::cout << "ScavTrap Assignment operator called" << std::endl;
         Hp =  other.Hp;
         Energy_points = other.Energy_points;
         Damage = other.Damage;
