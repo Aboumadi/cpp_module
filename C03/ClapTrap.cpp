@@ -46,13 +46,21 @@ void	ClapTrap::attack(std::string const &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->Hp > 0)
+	if (this->Hp > 0 && this->Energy_points)
 	{
 		std::cout << "ClapTrap " << this->Name << " lose " << amount << " points of Hit points!" << std::endl;
 		this->Hp -= amount;
 	}
-	else
+	if (this->Hp > 0 && !this->Energy_points)
+	{
+		std::cout << "ClapTrap " << this->Name << " is out because no Energy points" << std::endl;
+		this->Hp = 0;
+	}
+	if (this->Hp < 0 && this->Energy_points)
+	{
 		std::cout << "ClapTrap " << this->Name << " is out because no Hit points" << std::endl;
+		this->Energy_points = 0;
+	}
 	if (this->Hp < 0)
 		this->Hp = 0;
 }
@@ -69,4 +77,14 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << this->Name << " Can't repair because no Hit points " << std::endl;
 	else if (!this->Energy_points)
 		std::cout << "ClapTrap " << this->Name << " is out because no Energy points" << std::endl;
+}
+
+int const	&ClapTrap::get_hp(void) const
+{
+	return (this->Hp);
+}
+
+void	ClapTrap::set_hp(int const &Other_hp)
+{
+	this->Hp = Other_hp;
 }

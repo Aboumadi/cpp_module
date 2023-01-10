@@ -24,12 +24,7 @@ class ClapTrap
 		ClapTrap	&operator=(ClapTrap const &other);
 
 		/* Getters & Setters */
-		std::string const	&get_name(void) const;
 		int const			&get_hp(void) const;
-		int const			&get_energy_points(void) const;
-		int const			&get_damage(void) const;
-		void				set_name(std::string const &name);
 		void				set_hp(int const &value);
-		void				set_energy_points(int const &value);
-		void				set_damage(int const &value);
+
 };
