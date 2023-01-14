@@ -1,18 +1,18 @@
 NAME = Animal
-C = c++
+CXX = c++
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-INC = Animal.hpp WrongAnimal.hpp Dog.hpp Cat.hpp WrongCat.hpp
+INC = Animal.hpp Brain.hpp Dog.hpp Cat.hp
 
-SRCS =    main.cpp Animal.cpp WrongAnimal.cpp Dog.cpp Cat.cpp WrongCat.cpp
+SRCS =    main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJT = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME): $(OBJT)
-	$(C) $(CFLAGS) $(OBJT) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJT) -o $(NAME)
 
 %.o: %.cpp  $(INC)
 	$(C) $(CFLAGS) -c $< -o $@
