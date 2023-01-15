@@ -3,7 +3,7 @@
 Cat::Cat()
 {
 	std::cout << "Cat constructor." << std::endl;
-	_type = "Cat";
+	type = "Cat";
 }
 
 Cat::~Cat()
@@ -11,16 +11,16 @@ Cat::~Cat()
 	std::cout << "Cat destructor." << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other): Animal(other)
 {
 	std::cout << "Cat copy constructor." << std::endl;
-	this->_type = other._type;
+	this->type = other.type;
 }
 
 Cat &Cat::operator=(Cat const &copy)
 {
 	std::cout << "Cat assignment operator" << std::endl;
-	this->_type = copy._type;
+	this->type = copy.type;
 	return (*this);
 }
 

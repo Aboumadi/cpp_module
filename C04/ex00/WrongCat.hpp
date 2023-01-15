@@ -3,7 +3,7 @@
 class WrongCat : public WrongAnimal
 {
 protected:
-    std::string	_type;
+    std::string	type;
 public:
     WrongCat();
     WrongCat(std::string const &type);

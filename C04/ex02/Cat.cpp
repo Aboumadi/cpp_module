@@ -3,7 +3,7 @@
 Cat::Cat()
 {
 	std::cout << "Cat default constructor." << std::endl;
-	_type = "Cat";
+	type = "Cat";
 	this->Cerv = new Brain();
 }
 
@@ -16,7 +16,7 @@ Cat::~Cat()
 Cat::Cat(const Cat &copy): Animal(copy)
 {
 	std::cout << "Cat copy constructor." << std::endl;
-	//this->_type = copy._type;
+	//this->type = copy.type;
 	//Cerv = new Brain(*copy.Cerv);
 	*this = copy;
 }
@@ -26,7 +26,7 @@ Cat &Cat::operator=(Cat const &copy)
 	std::cout << "Cat assignment operator" << std::endl;
 	//if (Cerv)
 	//	delete Cerv;
-	//this->_type = copy._type;
+	//this->type = copy.type;
 	//*this->Cerv = *copy.Cerv;
 	Cerv = new Brain();
 	*Cerv = *copy.Cerv;

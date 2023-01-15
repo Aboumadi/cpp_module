@@ -3,7 +3,7 @@
 Dog::Dog()
 {
 	std::cout << "Dog default constructor." << std::endl;
-	_type = "Dog";
+	type = "Dog";
 	this->Cerv = new Brain();
 }
 
@@ -16,14 +16,14 @@ Dog::~Dog()
 Dog::Dog(const Dog &copy): Animal(copy)
 {
 	std::cout << "Dog copy constructor." << std::endl;
-	//_type = copy._type;
+	//type = copy.type;
 	*this = copy;
 }
 
 Dog &Dog::operator=(Dog const &copy)
 {
 	std::cout << "Dog assignment operator" << std::endl;
-	//this->_type = copy._type;*
+	//this->type = copy.type;*
 	//if (Cerv)
 	//	delete Cerv;
 	Cerv = new Brain();

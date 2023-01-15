@@ -3,7 +3,7 @@
 Dog::Dog()
 {
 	std::cout << "Dog constructor." << std::endl;
-	_type = "Dog";
+	type = "Dog";
 }
 
 Dog::~Dog()
@@ -11,16 +11,16 @@ Dog::~Dog()
 	std::cout << "Dog destructor." << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other): Animal(other)
 {
 	std::cout << "Dog copy constructor." << std::endl;
-	_type = other._type;
+	type = other.type;
 }
 
 Dog &Dog::operator=(Dog const &copy)
 {
 	std::cout << "Dog assignment operator" << std::endl;
-	this->_type = copy._type;
+	this->type = copy.type;
 	return (*this);
 }
 
