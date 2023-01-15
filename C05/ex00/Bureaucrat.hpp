@@ -38,3 +38,5 @@ public:
 				virtual char const	*what(void) const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &bcrat);
