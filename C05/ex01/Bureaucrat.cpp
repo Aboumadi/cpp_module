@@ -72,9 +72,9 @@ void Bureaucrat::signForm(class Form form)
     if (form.GetSignGrad() >= grade)
         std::cout << name << " is signed " << form.Getname() << std::endl;
     else if (form.GetisSigned())
-        std::cout << name << " can't sign it " << form.Getname() << " beacuase it's already signed"<< std::endl;
+        std::cout << name << " can't sign it " << form.Getname() << " beacuase it's already signed "<< std::endl;
     else
-        std::cout << name << " can't sign it " << form.Getname() << " beacuase grade is toot high"<< std::endl;
+        std::cout << name << " can't sign it " << form.Getname() << " because it is not eligible "<< std::endl;
 }
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bcrat)

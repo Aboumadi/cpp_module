@@ -57,8 +57,10 @@ void    Form::beSigned(Bureaucrat &bcart)
     if (bcart.getGrade() > this->SignGrad)
         throw(Form::GradeTooLowException());
     else
+    {
         this->isSigned = 1;
-    std::cout << bcart.getName() << " is Signed succesfully " << this->name << std::endl;
+        std::cout << bcart.getName() << " is Signed succesfully " << this->name << std::endl;
+    }
 }
 
 char const *Form::GradeTooHighException::what() const throw()
@@ -73,5 +75,5 @@ char const *Form::GradeTooLowException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &output, Form &form)
 {
-    return (output << form.Getname() << " form, signed: " << form.GetisSigned() << ", sign grade: " << form.GetSignGrad() << ", execute grade : " << form.GetExecGrad());
+    return (output << form.Getname() << " signed form : " << form.GetisSigned() << ", sign grade: " << form.GetSignGrad() << ", execute grade : " << form.GetExecGrad());
 }
