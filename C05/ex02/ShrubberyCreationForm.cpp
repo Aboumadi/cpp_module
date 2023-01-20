@@ -34,6 +34,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     {
         std::string name;
         name = executor.getName() + "_shrubbery";
+        //std::ofstream	file(name);
         std::ofstream	file(executor.getName() + "_shrubbery");
         if (file.is_open())
         {
@@ -58,5 +59,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     }
     else
         throw GradeTooLowException();
-    //std::ofstream file(executor.getName() + "_shrubbery");
 }
