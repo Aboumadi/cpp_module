@@ -13,7 +13,7 @@ public:
     ~PresidentialPardonForm();
 
     //operators
-    PresidentialPardonForm const &operator=(PresidentialPardonForm const &other) const;
+    PresidentialPardonForm const &operator=(PresidentialPardonForm const &other);
 
     //Member fonctions
     void    execute(Bureaucrat const & executor);

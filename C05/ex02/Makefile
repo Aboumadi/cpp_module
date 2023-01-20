@@ -3,11 +3,11 @@ CXX = c++
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-INC = Bureaucrat.hpp AForm.hpp PresidentialPardonAForm.hpp
-	RobotomyRequestAForm.hpp ShrubberyCreationAForm.hpp
+INC = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp\
+	RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 
-SRCS = Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonAForm.cpp
-	RobotomyRequestAForm.cpp ShrubberyCreationAForm.cpp
+SRCS = Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp\
+	RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJT = $(SRCS:.cpp=.o)
 

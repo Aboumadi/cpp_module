@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include <fstream>
 #include "Bureaucrat.hpp"
 
 class AForm
@@ -21,10 +19,10 @@ public:
     AForm const &operator=(AForm const &other);
 
     //Getters and Setters
-    std::string const   Getname();
-    bool                GetisSigned();
-    int                 GetSignGrad();
-    int                 GetExecGrad();
+    std::string const   Getname() const;
+    bool                GetisSigned() const;
+    int                 GetSignGrad() const;
+    int                 GetExecGrad() const;
 
     //Member fonction
     void                beSigned(Bureaucrat &bcrat);

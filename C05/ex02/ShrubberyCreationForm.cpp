@@ -30,7 +30,33 @@ ShrubberyCreationForm const &ShrubberyCreationForm::operator=(ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    std::string name;
-    name = executor.getName() + "_shrubbery";
-    std::ofstream	file(name);
+    if (GetisSigned() && executor.getGrade() <= GetExecGrad())
+    {
+        std::string name;
+        name = executor.getName() + "_shrubbery";
+        std::ofstream	file(executor.getName() + "_shrubbery");
+        if (file.is_open())
+        {
+            //std::string tree;
+            file <<     "    oxoxoo    ooxoo\n"
+						"  ooxoxo oo  oxoxooo\n"
+						" oooo xxoxoo ooo ooox\n"
+						" oxo o oxoxo  xoxxoxo\n"
+						"  oxo xooxoooo o ooo\n"
+						"    ooo\\oo\\  /o/o\n"
+						"        \\  \\/ /\n"
+						"         |   /\n"
+						"         |  |\n"
+						"         | D|\n"
+						"         |  |\n"
+						"         |  |\n"
+						"  ______/____\\____";
+            file.close();
+        }
+        else
+            std::cout << "Cannot open the file: " << Getname() + "_shrubbery" << std::endl;
+    }
+    else
+        throw GradeTooLowException();
+    //std::ofstream file(executor.getName() + "_shrubbery");
 }

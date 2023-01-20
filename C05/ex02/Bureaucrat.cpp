@@ -33,9 +33,9 @@ Bureaucrat const &Bureaucrat::operator=(Bureaucrat const &other)
     return (*this);
 }
 
-std::string const	&Bureaucrat::getName() const
+std::string	Bureaucrat::getName() const
 {
-	return (this->name);
+	return (name);
 }
 
 int const	&Bureaucrat::getGrade() const
@@ -67,14 +67,24 @@ char    const *Bureaucrat::GradeTooLowException::what() const throw()
     return ("too low grade");
 }
 
-void Bureaucrat::signAForm(AForm const &AForm)
+void Bureaucrat::signAForm(AForm &form)
 {
-    if (AForm.GetSignGrad() >= grade)
-        std::cout << name << " is signed " << AForm.Getname() << std::endl;
-    else if (AForm.GetisSigned())
-        std::cout << name << " can't sign it " << AForm.Getname() << " beacuase it's already signed "<< std::endl;
+    if (form.GetSignGrad() >= grade)
+        std::cout << name << " signed " << form.Getname() << std::endl;
+    else if (form.GetisSigned())
+        std::cout << name << " couldn’t sign " << form.Getname() << " beacuase it's already signed "<< std::endl;
     else
-        std::cout << name << " can't sign it " << AForm.Getname() << " because it is not eligible "<< std::endl;
+        std::cout << name << " couldn’t sign " << form.Getname() << " because it is not eligible "<< std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.GetisSigned() && form.GetSignGrad() >= grade)
+        std::cout << name << " excuted " << form.Getname() << std::endl;
+    else if (!form.GetisSigned())
+        std::cout << name << " couldn’t excute " << form.Getname() << " beacuase it's already signed "<< std::endl;
+    else
+        std::cout << name << " couldn’t sign " << form.Getname() << " because it is not eligible "<< std::endl;
 }
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bcrat)

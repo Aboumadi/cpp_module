@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include <exception>
 
 class Bureaucrat
@@ -19,13 +22,14 @@ public:
     Bureaucrat const	&operator=(Bureaucrat const &other);
 
     //Getter and setter
-    std::string const	&getName() const;
+    std::string	        getName() const;
 	int const			&getGrade() const;
 
     //Membre fonctions
     void incremante();
     void decremante();
-    void signAForm(AForm &form);
+    void signAForm(class AForm &form);
+    void executeForm(AForm const &form);
 
     //Class exceptions
     class GradeTooHighException: public std::exception

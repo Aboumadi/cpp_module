@@ -32,22 +32,22 @@ AForm const &AForm::operator=(AForm const &other)
     return *this;
 }
 
-std::string const AForm::Getname()
+std::string const AForm::Getname() const
 {
     return (this->name);
 }
 
-bool    AForm::GetisSigned()
+bool    AForm::GetisSigned() const
 {
     return (this->isSigned);
 }
 
-int AForm::GetSignGrad()
+int AForm::GetSignGrad() const
 {
     return (this->SignGrad);
 }
 
-int AForm::GetExecGrad()
+int AForm::GetExecGrad() const
 {
     return (this->ExecGrad);
 }

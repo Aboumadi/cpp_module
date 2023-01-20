@@ -12,7 +12,7 @@ public:
     ~RobotomyRequestForm();
 
     //operators
-    RobotomyRequestForm & operator=(RobotomyRequestForm const &other);
+    RobotomyRequestForm const &operator=(RobotomyRequestForm const &other);
 
     //Member fonction
     void  execute(Bureaucrat const & executor) const;
