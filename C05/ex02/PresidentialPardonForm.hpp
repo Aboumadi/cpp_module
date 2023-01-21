@@ -16,7 +16,5 @@ public:
     PresidentialPardonForm const &operator=(PresidentialPardonForm const &other);
 
     //Member fonctions
-    void    execute(Bureaucrat const & executor);
+    void    execute(Bureaucrat const &executor) const;
 };
-
-std::ostream &operator<<(std::ostream &output, PresidentialPardonForm const &P);

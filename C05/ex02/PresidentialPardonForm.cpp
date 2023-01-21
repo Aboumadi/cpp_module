@@ -8,27 +8,27 @@ PresidentialPardonForm::PresidentialPardonForm()
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target): AForm(target, 25, 5)
 {
-    std::cout << "PresidentialPardonForm constructor parametarize " << std::endl;
+    //std::cout << "PresidentialPardonForm constructor parametarize " << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy): AForm(copy)
 {
-    std::cout << "PresidentialPardonForm copy constructor " << std::endl;
+    //std::cout << "PresidentialPardonForm copy constructor " << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-    std::cout << "PresidentialPardonForm destructor " << std::endl;
+    //std::cout << "PresidentialPardonForm destructor " << std::endl;
 }
 
 PresidentialPardonForm const &PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
 {
     (void) other;
-    std::cout << "PresidentialPardonForm assignement operator" << std::endl;
+   // std::cout << "PresidentialPardonForm assignement operator" << std::endl;
     return *this;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor)
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if (GetisSigned() && executor.getGrade() <= GetExecGrad())
         std::cout << this->Getname() << " has been pardoned by Zafod Beeblebrox." << std::endl;

@@ -80,11 +80,14 @@ void Bureaucrat::signAForm(AForm &form)
 void Bureaucrat::executeForm(AForm const &form)
 {
     if (form.GetisSigned() && form.GetSignGrad() >= grade)
+    {
         std::cout << name << " excuted " << form.Getname() << std::endl;
-    else if (!form.GetisSigned())
+        form.execute(*this);
+    }
+    else if (form.GetisSigned())
         std::cout << name << " couldn’t excute " << form.Getname() << " beacuase it's already signed "<< std::endl;
     else
-        std::cout << name << " couldn’t sign " << form.Getname() << " because it is not eligible "<< std::endl;
+        std::cout << name << " couldn’t execute " << form.Getname() << " because it is not eligible "<< std::endl;
 }
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bcrat)
