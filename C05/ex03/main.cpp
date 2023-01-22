@@ -13,7 +13,12 @@ int main()
 		Intern stg;
 		std::cout << jack << std::endl;
 		AForm *form;
-		form = stg.makeForm("kldjfbl", "house");
+		form = stg.makeForm("Presidential", "house");
+		if (!form)
+		{
+			std::cout<<"error in allocation"<<std::endl;
+			return 0;
+		}
 		form->beSigned(jack);
 		jack.executeForm(*form);
 		delete form;

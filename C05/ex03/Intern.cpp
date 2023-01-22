@@ -4,9 +4,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 
-//enum name_form {robo , pres, shru};
-//const char *name_f[] = {"robotomy request","presidential pardon", "shrubbery creation"};
-
 Intern::Intern()
 {
     //std::cout<<"intern default constructor" <<std::endl;
@@ -28,36 +25,6 @@ Intern &Intern::operator=(Intern const &other)
     return *this;
 }
 
-
-/*AForm *Intern::makeForm(std::string namef, std::string targetf)
-{
-    std::string forms[4] = {"robotomy request","presidential pardon", "shrubbery creation"};
-    //name_form N;
-    //N = robo;
-    int i = 0;
-    while (namef != forms[i] && i < 3)
-        i++;
-    switch(i)
-    {
-        case 0:
-            //namef = N;
-            std::cout<<"Intern creates " << forms[i] << std::endl;
-            return new RobotomyRequestForm(targetf);
-        case 1:
-            //namef = N;
-            std::cout<<"Intern creates " << forms[i] << std::endl;
-            return new RobotomyRequestForm(targetf);
-        case 2:
-            //namef = N;
-            std::cout<<"Intern creates " << forms[i] << std::endl;
-            return new RobotomyRequestForm(targetf);
-        case 3:
-            std::cout<<"|"<<i<<"|"<<std::endl;
-            throw (Intern::FormNotFound());
-    }
-    return NULL;
-}*/
-
 AForm *Intern::makeForm(std::string name_f, std::string target_f)
 {
     int i;
@@ -71,7 +38,7 @@ AForm *Intern::noForm(std::string name, std::string target)
 {
     (void)name;
     (void)target;
-    throw (AForm::FormNotFound());
+    //throw (AForm::FormNotFound());
     return NULL;
 }
 
