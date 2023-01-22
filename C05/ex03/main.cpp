@@ -13,12 +13,7 @@ int main()
 		Intern stg;
 		std::cout << jack << std::endl;
 		AForm *form;
-		form = stg.makeForm("gfhkjgd","house");
-		if (!form)
-		{
-			std::cout<<"no allocation"<<std::endl;
-			return 0;
-		}
+		form = stg.makeForm("kldjfbl", "house");
 		form->beSigned(jack);
 		jack.executeForm(*form);
 		delete form;

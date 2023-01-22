@@ -27,6 +27,7 @@ public:
     //Member fonction
     void                beSigned(Bureaucrat &bcrat);
     virtual void        execute(Bureaucrat const & executor) const = 0;
+    AForm               *makeForm(std::string namef, std::string targetf);
 
     //Class exception
     class GradeTooHighException: std::exception
@@ -36,6 +37,12 @@ public:
     };
 
     class GradeTooLowException: std::exception
+    {
+        public:
+        char const *what() const throw();
+    };
+
+    class FormNotFound: std::exception
     {
         public:
         char const *what() const throw();

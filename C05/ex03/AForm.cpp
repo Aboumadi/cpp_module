@@ -73,6 +73,11 @@ char const *AForm::GradeTooLowException::what() const throw()
     return ("Grad is too low");
 }
 
+char const *AForm::FormNotFound::what() const throw()
+{
+    return ("Form does not exist");
+}
+
 std::ostream	&operator<<(std::ostream &output, AForm &AForm)
 {
     return (output << AForm.Getname() << " signed AForm : " << AForm.GetisSigned() << ", sign grade: " << AForm.GetSignGrad() << ", execute grade : " << AForm.GetExecGrad());
