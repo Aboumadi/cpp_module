@@ -11,6 +11,7 @@ Form::~Form()
 
 Form::Form(std::string const _name, int const _SignGrad, int const _ExecGrad): name(_name), SignGrad(_SignGrad), ExecGrad(_ExecGrad)
 {
+    isSigned = 0;
     if (SignGrad < 1)
         throw(Form::GradeTooHighException());
     else if (SignGrad > 150)

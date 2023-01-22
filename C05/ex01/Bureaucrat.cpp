@@ -69,10 +69,11 @@ char    const *Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::signForm(class Form form)
 {
-    if (form.GetSignGrad() >= grade)
+    //if (form.GetSignGrad() >= grade)
+    //    std::cout << name << " is signed " << form.Getname() << std::endl;
+    if (form.GetisSigned())
+        //std::cout << name << " can't sign it " << form.Getname() << " beacuase it's already signed "<< std::endl;
         std::cout << name << " is signed " << form.Getname() << std::endl;
-    else if (form.GetisSigned())
-        std::cout << name << " can't sign it " << form.Getname() << " beacuase it's already signed "<< std::endl;
     else
         std::cout << name << " can't sign it " << form.Getname() << " because it is not eligible "<< std::endl;
 }

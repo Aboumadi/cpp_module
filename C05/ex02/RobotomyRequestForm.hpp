@@ -3,7 +3,6 @@
 
 class RobotomyRequestForm : public AForm
 {
-private:
 public:
     //constructor and destructor
     RobotomyRequestForm();

@@ -17,7 +17,6 @@ $(NAME): $(OBJT)
 %.o: %.cpp  $(INC)
 	$(CXX) $(CFLAGS) -c $< -o $@
 
-
 clean:
 	$(RM) $(OBJT)
 fclean: clean

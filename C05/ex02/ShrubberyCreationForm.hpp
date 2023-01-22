@@ -3,7 +3,6 @@
 
 class ShrubberyCreationForm : public AForm
 {
-private:
 public:
     //constructor and destructor
     ShrubberyCreationForm();

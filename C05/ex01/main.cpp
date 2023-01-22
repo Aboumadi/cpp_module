@@ -10,6 +10,7 @@ int main()
 			Form form("B58", 20, 45);
 			std::cout << mike << std::endl;
 			std::cout << form << std::endl;
+			form.beSigned(mike);
 			mike.signForm(form);
 			std::cout << form << std::endl;
 		}

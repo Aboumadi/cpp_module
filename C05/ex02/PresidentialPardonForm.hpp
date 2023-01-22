@@ -3,8 +3,6 @@
 
 class PresidentialPardonForm : public AForm
 {
-private:
-    
 public:
     //constructor and destructor
     PresidentialPardonForm();
