@@ -59,8 +59,3 @@ AForm *Intern::presidential(std::string name, std::string target)
     std::cout<<"Intern Creat "<<name<<std::endl;
     return new PresidentialPardonForm(target);
 }
-
-/*char const *Intern::FormNotFound::what() const throw()
-{
-    return ("Form does not exist");
-}*/

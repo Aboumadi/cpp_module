@@ -34,13 +34,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     {
         std::string name;
         name = executor.getName() + "_shrubbery";
-        //std::ofstream	file(name);
-        //std::ofstream	file(executor.getName() + "_shrubbery");
         std::ofstream file;
         file.open((executor.getName() + "_shrubbery").c_str());
         if (file.is_open())
         {
-            //std::string tree;
             file <<     "    oxoxoo    ooxoo\n"
 						"  ooxoxo oo  oxoxooo\n"
 						" oooo xxoxoo ooo ooox\n"

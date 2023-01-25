@@ -38,7 +38,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         file.open((executor.getName() + "_shrubbery").c_str());
         if (file.is_open())
         {
-            //std::string tree;
             file <<     "    oxoxoo    ooxoo\n"
 						"  ooxoxo oo  oxoxooo\n"
 						" oooo xxoxoo ooo ooox\n"
