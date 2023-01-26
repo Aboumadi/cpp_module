@@ -10,10 +10,17 @@ convert::~convert()
 
 convert::convert(std::string str): _str(str)
 {
-    if (_str == "nan" || _str == "+inf" || _str == "-inf" || _str == "+inff"|| _str == "-inff" || _str == "nanf")
-        convert_nans(_str);
     check_type();
-    if (_type == "char")
+    if (str.length() > 19)
+    {
+        std::cout<<"char : impossible"<<std::endl;
+        std::cout<<"int : impossible"<<std::endl;
+        std::cout<<"float : impossible"<<std::endl;
+        std::cout<<"double : impossible"<<std::endl;
+    }
+    else if (_str == "nan" || _str == "+inf" || _str == "-inf" || _str == "+inff"|| _str == "-inff" || _str == "nanf")
+        convert_nans(_str);
+    else if (_type == "char")
         convert_to_char(_str[0]);
     else if(_type == "int")
         convert_to_int(_str);
@@ -147,17 +154,17 @@ void    convert::convert_to_int(std::string str)
 void    convert::convert_to_float(std::string str)
 {
     double i;
-    i = atof(str.c_str());
-    std::cout<<"char : Non displayable" <<std::endl;
-    std::cout << "int: " << static_cast<int>(i) << std::endl;
-    if (static_cast<float>(i) == static_cast<int>(i))
-        std::cout << "float: " << static_cast<float>(i) << ".0f"<< std::endl;
-    else
-        std::cout << "float: " << static_cast<float>(i) << "f"<< std::endl;
-    if (static_cast<float>(i) == static_cast<int>(i))
-	    std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
-    else
-        std::cout << "double: " << static_cast<double>(i) << std::endl;
+        i = atof(str.c_str());
+        std::cout<<"char : Non displayable" <<std::endl;
+        std::cout << "int: " << static_cast<int>(i) << std::endl;
+        if (static_cast<float>(i) == static_cast<int>(i))
+            std::cout << "float: " << static_cast<float>(i) << ".0f"<< std::endl;
+        else
+            std::cout << "float: " << static_cast<float>(i) << "f"<< std::endl;
+        if (static_cast<float>(i) == static_cast<int>(i))
+	        std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+        else
+            std::cout << "double: " << static_cast<double>(i) << std::endl;
 }
 
 void    convert::convert_nans(std::string str)
