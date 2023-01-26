@@ -1,7 +1,7 @@
 NAME = conv
 CXX = c++
 RM = rm -rf
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 INC = convert.hpp
 

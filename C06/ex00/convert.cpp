@@ -10,6 +10,8 @@ convert::~convert()
 
 convert::convert(std::string str): _str(str)
 {
+    if (_str == "nan" || _str == "+inf" || _str == "-inf" || _str == "+inff"|| _str == "-inff" || _str == "nanf")
+        convert_nans(_str);
     check_type();
     if (_type == "char")
         convert_to_char(_str[0]);
@@ -18,7 +20,17 @@ convert::convert(std::string str): _str(str)
     else if(_type == "float")
     {
         if (check_syntaxf())
-            convert_to_float(str);
+            convert_to_float(_str);
+        else
+        {
+            std::cout<<"impossible to conversion"<<std::endl;
+            return;
+        }
+    }
+    else if (_type == "double")
+    {
+        if (check_syntaxd())
+            convert_to_float(_str);
         else
         {
             std::cout<<"impossible to conversion"<<std::endl;
@@ -34,10 +46,11 @@ void    convert::check_type()
         _type = "char";
     else if(check_int())
         _type = "int";
-    else if(check_float())
-        _type = "float";
     else if (check_double())
         _type = "double";
+    else if(check_float())
+        _type = "float";
+    else _type = "vide";
 }
 
 bool    convert::check_syntaxf()
@@ -50,9 +63,22 @@ bool    convert::check_syntaxf()
             n++;
         if (_str[i] == '.')
             p++;
-        i++;
     }
     if (n == 1 && _str[_str.length() - 1] == 'f' && p == 1 && isdigit(_str[_str.length() - 2]))
+        return true;
+    else
+        return false;
+}
+
+bool    convert::check_syntaxd()
+{
+    int n = 0;
+    for (size_t i = 0; i < _str.length(); i++)
+    {
+        if (_str[i] == '.')
+            n++;
+    }
+    if (n)
         return true;
     else
         return false;
@@ -85,7 +111,7 @@ bool    convert::check_float()
 
 bool    convert::check_double()
 {
-    if (_str.find_first_not_of("-+0123456789."))
+    if (_str.find_first_not_of("-+.0123456789") == std::string::npos)
         return true;
     else
         return false;
@@ -93,10 +119,9 @@ bool    convert::check_double()
 
 void    convert::convert_to_char(char c)
 {
-    std::cout<< _type <<std::endl;
     std::cout<<"char : " << static_cast<char>(c)<<std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
-	std::cout << "float: " << static_cast<float>(c) << "f"<< std::endl;
+	std::cout << "float: " << static_cast<float>(c) << ".0f"<< std::endl;
 	std::cout << "double: " << static_cast<double>(c)<< ".0" << std::endl;
     
 }
@@ -105,22 +130,50 @@ void    convert::convert_to_int(std::string str)
 {
     int i;
     i = atoi(str.c_str());
-    if (!isprint(i))
+    if (i < CHAR_MIN || i > CHAR_MAX || !isprint(i))
         std::cout<<"char : Non displayable" <<std::endl;
     else
-    std::cout<<"char : " << static_cast<char>(i)<<std::endl;
-    std::cout << "int: " << static_cast<int>(i) << std::endl;
-	std::cout << "float: " << static_cast<float>(i) << "f"<< std::endl;
-	std::cout << "double: " << static_cast<double>(i)<< ".0" << std::endl;
+    {
+        std::cout<<"char : " << static_cast<char>(i)<<std::endl;
+    }
+        std::cout << "int: " << static_cast<int>(i) << std::endl;
+	    std::cout << "float: " << static_cast<float>(i) << ".0f"<< std::endl;
+	    std::cout << "double: " << static_cast<double>(i)<< ".0" << std::endl;
 }
 
 void    convert::convert_to_float(std::string str)
 {
-    int i;
+    float i;
     i = atof(str.c_str());
-    std::cout<<_type<<std::endl;
     std::cout<<"char : Non displayable" <<std::endl;
     std::cout << "int: " << static_cast<int>(i) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f"<< std::endl;
-	std::cout << "double: " << static_cast<double>(i)<< ".0" << std::endl;
+    if (static_cast<float>(i) == static_cast<int>(i))
+        std::cout << "float: " << static_cast<float>(i) << ".0f"<< std::endl;
+    else
+        std::cout << "float: " << static_cast<float>(i) << "f"<< std::endl;
+    if (static_cast<float>(i) == static_cast<int>(i))
+	    std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+    else
+        std::cout << "double: " << static_cast<double>(i) << std::endl;
+}
+
+void    convert::convert_nans(std::string str)
+{
+    std::cout<<"char : impossible"<<std::endl;
+    std::cout<<"int : impossible"<<std::endl;
+    if (str == "nan" || str == "nanf")
+    {
+        std::cout<<"float : nanf"<<std::endl;
+        std::cout<<"double : nan"<<std::endl;
+    }
+    else if (str == "-inf" || str == "-inff")
+    {
+        std::cout<<"float : -inff"<<std::endl;
+        std::cout<<"double : -inf"<<std::endl;
+    }
+    else if (str == "+inf" || str == "+inff")
+    {
+        std::cout<<"float : inff"<<std::endl;
+        std::cout<<"double : inf"<<std::endl;
+    }
 }
