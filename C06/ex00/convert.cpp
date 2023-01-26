@@ -37,7 +37,8 @@ convert::convert(std::string str): _str(str)
             return;
         }
     }
-
+    else
+        std::cout<<"error input"<<std::endl;
 }
 
 void    convert::check_type()
@@ -50,7 +51,6 @@ void    convert::check_type()
         _type = "double";
     else if(check_float())
         _type = "float";
-    else _type = "vide";
 }
 
 bool    convert::check_syntaxf()
@@ -78,7 +78,7 @@ bool    convert::check_syntaxd()
         if (_str[i] == '.')
             n++;
     }
-    if (n)
+    if (n == 1)
         return true;
     else
         return false;
@@ -128,22 +128,25 @@ void    convert::convert_to_char(char c)
 
 void    convert::convert_to_int(std::string str)
 {
-    int i;
-    i = atoi(str.c_str());
+    double i;
+    i = atoll(str.c_str());
     if (i < CHAR_MIN || i > CHAR_MAX || !isprint(i))
         std::cout<<"char : Non displayable" <<std::endl;
     else
+    {std::cout<<"char : " << static_cast<char>(i)<<std::endl;}
+    if (i < INT_MIN || i > INT_MAX)
+        std::cout << "int: conversion is impossible" << std::endl;
+    else
     {
-        std::cout<<"char : " << static_cast<char>(i)<<std::endl;
-    }
         std::cout << "int: " << static_cast<int>(i) << std::endl;
+    }
 	    std::cout << "float: " << static_cast<float>(i) << ".0f"<< std::endl;
 	    std::cout << "double: " << static_cast<double>(i)<< ".0" << std::endl;
 }
 
 void    convert::convert_to_float(std::string str)
 {
-    float i;
+    double i;
     i = atof(str.c_str());
     std::cout<<"char : Non displayable" <<std::endl;
     std::cout << "int: " << static_cast<int>(i) << std::endl;
