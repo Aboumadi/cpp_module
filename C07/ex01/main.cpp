@@ -1,9 +1,10 @@
 #include "iter.hpp"
 
-/*
+
 template <typename T> 
 void print_elm(T a)
 {
+    a++;
     std::cout << a << std::endl;
 }
 
@@ -14,7 +15,7 @@ int main()
 
     //iter(p,3,print_elm);
     std::cout << std::endl;
-    iter(t1[0],3,print_elm);
-    //std::cout<<&t1<<std::endl;
+    iter(t1,3,print_elm);
+    std::cout<<t1[0]<<std::endl;
 
-}*/
+}
