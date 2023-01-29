@@ -45,7 +45,7 @@ int     Span::shortestSpan()
     std::vector<int> arr(vect);
     std::sort(arr.begin(), arr.end());
     if (this->vect.size() < 2)
-        throw std::runtime_error("number of element is not enough");
+        throw NoElements();
     m = arr[1] - arr[0];
     for (size_t i = 0; i < arr.size() - 1; i++)
     {

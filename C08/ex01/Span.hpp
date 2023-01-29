@@ -20,5 +20,10 @@ public:
     void fill(std::vector<int>::iterator fisrt, std::vector<int>::iterator last);
     int &operator[](unsigned int index);
     const int &operator[](unsigned int index) const;
+    class NoElements : public std::exception {
+     virtual const char* what() const throw() {
+        return "number of element is not enough";
+        }
+    };
     ~Span(){};
 };
