@@ -1,47 +1,25 @@
-#include "easyfind.hpp"
-#include <iterator>
-
-/*int main()
-    {
-        std::array<int, 5> arr = {10, 20, 30, 40, 50};
-        std::array<int, 5>::iterator it;
-
-        std::cout << "array: [ ";
-        for (it = arr.begin(); it != arr.end(); it++) {
-            std::cout << *it << " ";
-        }
-        std::cout << "]" << std::endl;
-        try {
-            *it = easyfind(arr, 10);
-            std::cout << *it << std::endl;
-            *it = easyfind(arr, 84);
-        }
-        catch(const std::exception& e) {
-            std::cerr << e.what() << std::endl;
-        }
-    }*/
+#include "Span.hpp"
 
 int main()
 {
-    std::vector<float> vect;
-
-    vect.push_back(1);
-    vect.push_back(5);
-    vect.push_back(8.5);
-    vect.push_back(3);
-    vect.push_back(22);
-    vect.push_back(0);
-    vect.push_back(6);
-    vect.push_back(6);
-    vect.push_back(88);
     try
     {
-        /* code */
-        std::cout << easyfind(vect, 88)<<std::endl;
+        Span sp = Span(5);
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    return 0;
+    
+
+return 0;
 }
+
+//3 6 9 11 17

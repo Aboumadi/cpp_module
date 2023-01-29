@@ -1,11 +1,10 @@
-NAME = find
+NAME = ex01
 CXX = c++
 RM = rm -rf
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++11
+INC = Span.hpp
 
-INC = easyfind.hpp
-
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 OBJT = $(SRCS:.cpp=.o)
 
