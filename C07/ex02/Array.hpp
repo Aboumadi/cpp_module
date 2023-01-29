@@ -53,7 +53,7 @@ public:
 
     T& operator[](int index)
     {
-        if (index <=  || index > s)
+        if (index > this->s)
             throw std::out_of_range("Out of Range error");
         return arr[index];
     }
