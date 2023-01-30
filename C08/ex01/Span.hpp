@@ -25,5 +25,5 @@ public:
         return "number of element is not enough";
         }
     };
-    ~Span(){};
+    ~Span();
 };

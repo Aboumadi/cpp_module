@@ -10,6 +10,10 @@ Span::Span(unsigned int N)
     this->vect.reserve(N);
 }
 
+Span::~Span()
+{
+    //std::cout<<"destructor"<<std::endl;
+}
 
 Span::Span(const Span &copy)
 {

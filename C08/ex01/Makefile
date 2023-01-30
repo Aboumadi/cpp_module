@@ -1,7 +1,7 @@
 NAME = ex01
 CXX = c++
 RM = rm -rf
-CFLAGS = -Wall -Werror -Wextra -std=c++11
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 INC = Span.hpp
 
 SRCS = main.cpp Span.cpp
