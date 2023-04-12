@@ -4,16 +4,17 @@ int main(int ac, char **av)
 {
     if (ac != 2)
     {
-        std::cout<<"Bad Arguments..."<<std::endl;
+        std::cout<<"Error: could not open file."<<std::endl;
         exit (EXIT_FAILURE);
     }
     std::ifstream infile;
+    //need to verify the name
     infile.open(av[1]);
     if (!infile)
     {
-        std::cout<<"File Not Found.."<<std::endl;
+        std::cout<<"Error: could not open file."<<std::endl;
         exit (EXIT_FAILURE);
     }
-    BitcoinExchange();
-    BitcoinExchange bit(av[1]);
+    BitcoinExchange btc;
+    btc.reading_file(av[1]);
 }
