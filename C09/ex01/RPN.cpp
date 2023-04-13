@@ -62,7 +62,7 @@ void    RPN::operations(std::string str)
         {
             if (rpn.top() == 0)
             {
-                std::cout<<"Bad input : you devid by zero"<<std::endl;
+                std::cout<<"Error"<<std::endl;
                 return;
             }
             y = rpn.top();
@@ -84,7 +84,7 @@ void    RPN::operations(std::string str)
     }
     else
     {
-        std::cout<<"Bad Input..."<<std::endl;
+        std::cout<<"Error"<<std::endl;
         return ;
     }
 }
