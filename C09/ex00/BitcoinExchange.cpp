@@ -157,11 +157,9 @@ bool    BitcoinExchange::ft_check_value(std::string value, double *val)
 {
     int i;
     int pt;
-    int mn;
 
     i = 0;
     pt = 0;
-    mn = 0;
     if (!value[i])
         return false;
     // if (value[i] == '-' && std::isdigit(value[i + 1]))
