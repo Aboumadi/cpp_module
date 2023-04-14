@@ -24,6 +24,17 @@ BitcoinExchange::BitcoinExchange()
     it = btc.begin();
 }
 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
+{
+	*this = copy;
+}
+
+BitcoinExchange const &BitcoinExchange::operator=(const BitcoinExchange &copy)
+{
+    this->btc = copy.btc;
+    return (*this);
+}
+
 BitcoinExchange::~BitcoinExchange()
 {
 }
@@ -162,10 +173,6 @@ bool    BitcoinExchange::ft_check_value(std::string value, double *val)
     pt = 0;
     if (!value[i])
         return false;
-    // if (value[i] == '-' && std::isdigit(value[i + 1]))
-    //     mn++;
-    // else
-    //     mn++;
     i = -1;
     while (value[++i])
     {
